@@ -41,3 +41,43 @@ merged: a p b q c d
 
 1. 1 <= word1.length, word2.length <= 100
 2. word1 and word2 consist of lowercase English letters.
+
+# My Solution and Thought Process
+
+I initially started with wanting to add into an empty string called mergedString.
+The solution works well but it is not an optimal method, the reason why is when you append onto a string
+in python, since strings are immutable, python has to create a new string each time I add a character to mergedString.
+And when I do this for every n characters it adopts a quadratic time complexity since python copies over all the characters
+of old string to the new string and then add the new character. Since the input size has a length constraint of being between 1 and 100 this quadratic complexity is less noticeable.
+
+### Code Example:
+
+```
+def merge_string_alternately(self,word1,word2):
+        if not word1:
+            return word2
+        elif not word2:
+            return word1
+
+        merged_string = ""
+
+        shorter_word = min(len(word1),len(word2))
+
+        for i in range(shorter_word):
+            merged_string += word1[i]
+            merged_string += word2[i]
+
+        if len(word1) > shorter_word:
+            merged_string += word1[shorter_word:]
+        elif len(word2) > shorter_word:
+            merged_string += word2[shorter_word:]
+
+        return merged_string
+```
+
+For a more optimal solution, I think creating a list for the two words and then appending to a new list will be better
+in time complexity.
+
+```
+
+```
