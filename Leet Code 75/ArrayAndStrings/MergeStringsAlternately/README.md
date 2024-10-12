@@ -75,9 +75,34 @@ def merge_string_alternately(self,word1,word2):
         return merged_string
 ```
 
-For a more optimal solution, I think creating a list for the two words and then appending to a new list will be better
-in time complexity.
+For a more optimal solution, I think creating a list for for the merged_string and then appending to that is better since it is
+O(1) time complexity to append. Overall the time complexity turns into O(n) since the we iterate through the input once, and space complexity
+is O(n) as well since the list grows proportion with the input size n.
 
 ```
+def merge_string_alternately(self,word1,word2):
+        '''
+        Same thing just change the appending to list style
+        '''
+        if not word1:
+            return word2
+        if not word2:
+            return word1
 
+        shorter_word = min(len(word1),len(word2))
+
+        mergedString = []
+
+        for i in range(shorter_word):
+            mergedString.append(word1[i])
+            mergedString.append(word2[i])
+
+        if len(word1) > shorter_word:
+            for i in range(shorter_word, len(word1)):
+                mergedString.append(word1[i])
+        if len(word2) > shorter_word:
+            for i in range(shorter_word, len(word2)):
+                mergedString.append(word2[i])
+
+        return ("").join(mergedString)
 ```
