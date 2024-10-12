@@ -41,5 +41,3 @@ merged: a p b q c d
 
 1. 1 <= word1.length, word2.length <= 100
 2. word1 and word2 consist of lowercase English letters.
-
-## Solution
