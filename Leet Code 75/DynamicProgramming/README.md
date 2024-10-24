@@ -1,5 +1,15 @@
 # Dynamic Programming:
 
+Two types of Dynamic Programming:
+
+## Top-Down Approach
+
+This is known as dynamic programming with memoization as cache and uses recursion.
+
+## Bottom-Up Approach
+
+This is known as using tabulation by storing index and values by starting from the lowest element.
+
 Fibancci Problem
 
 Step 1: Find the recursive brute force:
