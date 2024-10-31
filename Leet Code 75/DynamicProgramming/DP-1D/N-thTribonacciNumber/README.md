@@ -33,3 +33,13 @@ def tribonacci(self, n: int) -> int:
         return memo[n]
     return dp_tribonacci(n)
 ```
+
+## Without Memoization
+
+    Time Complexity: O(3^n) Each steps are calculated again without storing.
+    Space Complexity: O(n) Memoization and recursion stack space
+
+## With Memoization
+
+    Time Complexity: O(n) Iterate through input only once
+    Space Complexity: O(n) Memoization and recursion stack space
